@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "declaration": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "outDir": "dist"
+  },
+  "include": ["src", "test", "typings"]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "chain-db-sdk-eth",
+  "version": "0.0.1",
+  "description": "Chain Database SDK for Ethereum",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prettier": "prettier --write 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "tslint -t codeFrame --project tsconfig.json",
+    "build": "tsc --project tsconfig.json",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BDNTeam/sdk-eth.git"
+  },
+  "keywords": [
+    "chain database",
+    "sdk"
+  ],
+  "author": "hsiaosiyuan0@outlook.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BDNTeam/sdk-eth/issues"
+  },
+  "homepage": "https://github.com/BDNTeam/sdk-eth#readme",
+  "devDependencies": {
+    "@types/jest": "^23.1.5",
+    "@types/lodash": "^4.14.111",
+    "@types/nanoid": "^1.0.0",
+    "@types/node": "^10.5.2",
+    "@types/web3": "^1.0.7",
+    "jest": "^23.3.0",
+    "prettier": "^1.13.7",
+    "ts-jest": "^23.0.0",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.11.0",
+    "typescript": "^2.9.2",
+    "typescript-register": "^1.1.0",
+    "typescript-require": "^0.2.10"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "./src/**/*.ts"
+    ],
+    "testRegex": "test\\/*\\.ts",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "dependencies": {
+    "bigchaindb-driver": "^4.1.0",
+    "lodash": "^4.17.10",
+    "nanoid": "^1.1.0",
+    "tweetnacl": "^1.0.0",
+    "web3": "^1.0.0-beta.36"
+  }
+}
