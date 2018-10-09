@@ -58,5 +58,5 @@ export class TransactionHelper {
     return null;
   }
 
-  async sell(asset: string, price: number): Promise<string> {}
+  // async sell(asset: string, price: number): Promise<string> {}
 }

@@ -10,5 +10,6 @@ import { TransactionHelper, dbDriver } from "./transaction";
   const meta = { what: "My first BigchainDB transaction" };
 
   const tx = await helper.createTransaction(asset, meta);
+  // tslint:disable-next-line:no-console
   console.log(tx);
 })();
