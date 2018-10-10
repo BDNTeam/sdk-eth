@@ -1,4 +1,7 @@
+// tslint:disable:no-console
+
 import { TransactionHelper, dbDriver } from "./transaction";
+import { Api } from "./api";
 
 (async () => {
   const API_PATH = "http://104.238.140.52:9984/api/v1/";
@@ -9,7 +12,9 @@ import { TransactionHelper, dbDriver } from "./transaction";
   const asset = { city: "Berlin, DE", temperature: 22, datetime: new Date().toString() };
   const meta = { what: "My first BigchainDB transaction" };
 
-  const tx = await helper.createTransaction(asset, meta);
-  // tslint:disable-next-line:no-console
-  console.log(tx);
+  const abi = await Api.getAbi("Asset");
+  console.log(abi);
+
+  // const tx = await helper.createTransaction(asset, meta);
+  // console.log(tx);
 })();

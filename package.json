@@ -58,6 +58,7 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bigchaindb-driver": "^4.1.0",
     "ini": "^1.3.5",
     "lodash": "^4.17.10",

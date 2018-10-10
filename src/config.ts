@@ -10,7 +10,7 @@ const read = util.promisify(fs.readFile);
 const write = util.promisify(fs.writeFile);
 const copy = util.promisify(fs.copyFile);
 
-const defaultCfgPath = path.resolve(__dirname, "./cfg.ini");
+const defaultCfgPath = path.resolve(__dirname, "./config.ini");
 const cfgPath = path.join(os.homedir(), ".chain-db-sdk-eth.ini");
 const abiDir = path.resolve(__dirname, "contract/");
 
@@ -51,10 +51,6 @@ export class Config {
 
   async save() {
     await write(cfgPath, ini.stringify(this.data));
-  }
-
-  abiPath(name: string) {
-    return path.resolve(abiDir, name + ".json");
   }
 
   gasOpts(force = {}) {
