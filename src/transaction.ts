@@ -43,10 +43,10 @@ export class TransactionHelper {
       meta,
       [
         driver.Transaction.makeOutput(
-          driver.Transaction.makeEd25519Condition(this.keyPair.publicKey)
-        )
+          driver.Transaction.makeEd25519Condition(this.keyPair.publicKey),
+        ),
       ],
-      this.keyPair.publicKey
+      this.keyPair.publicKey,
     );
 
     const txSigned = driver.Transaction.signTransaction(tx, this.keyPair.privateKey);

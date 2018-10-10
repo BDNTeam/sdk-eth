@@ -1,20 +1,18 @@
-import fs from "fs";
-import util from "util";
 import Web3 from "web3";
 import { Api } from "./api";
-import { Config } from "./config";
+import cfg from "./config";
 
 export class ContractFactory {
-  web3: Web3;
+  static web3: Web3;
 
-  constructor() {
-    this.web3 = new Web3();
+  static setWeb3(web3: Web3) {
+    this.web3 = web3;
+    return this;
   }
 
-  async createInst(name: string, addr: string, gasOpts = {}) {
+  static async createInst(name: string, addr: string, txOpts = {}) {
     const abi = await Api.getAbi(name);
-    const cfg = await Config.singleton();
-    gasOpts = cfg.gasOpts(gasOpts);
-    return new this.web3.eth.Contract(abi.data, addr, gasOpts);
+    const opts = { ...cfg.eth.txOpts, ...txOpts };
+    return new this.web3.eth.Contract(abi, addr, opts);
   }
 }

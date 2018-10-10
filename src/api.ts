@@ -1,19 +1,46 @@
-import { Config } from "./config";
+import cfg from "./config";
 import axios from "axios";
 import url from "url";
 
+const abiCache: { [k: string]: any } = {};
+
 export class Api {
   static async buildUrl(path: string) {
-    const cfg = await Config.singleton();
-    const srvAddr = cfg.get<string>("base.sdkServer");
+    const srvAddr = cfg.base.sdkServer;
     return url.resolve(srvAddr, path);
   }
 
   static async getAbi(name: string) {
-    const u = await this.buildUrl("/abi/get");
+    const c = abiCache[name];
+    if (c) return c;
+
+    const u = await this.buildUrl("/contract/getAbi");
     const resp = await axios.get(u, { params: { name } });
     const data = resp.data;
-    if (data.code === 0) return data.data;
+    if (data.code === 0) {
+      abiCache[name] = data.data;
+      return data.data;
+    }
+    throw new Error("response error: " + data.msg);
+  }
+
+  static async getMarketAddr() {
+    const u = await this.buildUrl("/contract/getMarketAddr");
+    const resp = await axios.get(u);
+    const data = resp.data;
+    if (data.code === 0) {
+      return data.data;
+    }
+    throw new Error("response error: " + data.msg);
+  }
+
+  static async getBdnAddr() {
+    const u = await this.buildUrl("/contract/getBdnAddr");
+    const resp = await axios.get(u);
+    const data = resp.data;
+    if (data.code === 0) {
+      return data.data;
+    }
     throw new Error("response error: " + data.msg);
   }
 }
