@@ -1,4 +1,5 @@
 import nacl from "tweetnacl";
+import base58 from "bs58";
 
 // tslint:disable-next-line:no-var-requires
 const driver = require("bigchaindb-driver");
@@ -9,7 +10,7 @@ export class TransactionHelper {
   apiPath = "";
   conn: any;
 
-  keyPair: any = null;
+  keyPair: { publicKey: string; privateKey: string };
 
   constructor(apiPath = "", account: any) {
     this.apiPath = apiPath;
@@ -22,7 +23,14 @@ export class TransactionHelper {
    * @param keyPair Ed25519Keypair or eth account
    */
   setKeyPair(keyPair: any) {
-    this.keyPair = keyPair.address ? nacl.box.keyPair.fromSecretKey(keyPair.privateKey) : keyPair;
+    keyPair = keyPair.address
+      ? nacl.box.keyPair.fromSecretKey(Buffer.from(keyPair.privateKey.slice(2), "hex"))
+      : keyPair;
+
+    this.keyPair = {
+      publicKey: base58.encode(keyPair.publicKey),
+      privateKey: base58.encode(keyPair.secretKey),
+    };
   }
 
   ensureKeyPair() {

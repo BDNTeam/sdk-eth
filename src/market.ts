@@ -14,7 +14,7 @@ export class MarketHelper {
 
   web3Helper: Web3Helper;
 
-  async init(web3Helper: Web3Helper, txOpts = {}) {
+  async init(web3Helper: Web3Helper, txOpts: any = {}) {
     const marketAddr = await Api.getMarketAddr();
     const bdnAddr = await Api.getBdnAddr();
 
