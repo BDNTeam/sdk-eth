@@ -44,7 +44,7 @@ import { Seller, SellerOpts, Buyer, BuyerOpts } from "../src";
   //
   // the automatic transfer process should be run as a daemon, once it
   // receives the payment notification it will do the transfer.
-  // in other words if this code in run in a browser tab, the tab should not be closed until
+  // in other words if this code is ran in a browser tab, the tab should not be closed until
   // the payment notification is received
   //
   // the manual way is shown on below comment
