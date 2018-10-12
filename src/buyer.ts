@@ -1,5 +1,5 @@
 import cfg from "./config";
-import { Crypto } from "./crypto";
+import { CryptoHelper } from "./crypto";
 import { MarketHelper } from "./market";
 import { TransactionHelper } from "./transaction";
 import { Web3Helper } from "./web3";
@@ -41,7 +41,17 @@ export class Buyer {
   }
 
   async buy(mktId: string, price: number) {
-    return this.marketHelper.buy(mktId, price * Math.pow(10, 6));
+    return this.marketHelper.buy(
+      mktId,
+      this.txHelper.keyPair.signPublicKey.toString(),
+      this.txHelper.keyPair.boxPublicKey.toString(),
+      price * Math.pow(10, 6),
+    );
+  }
+
+  async receiveAsset(asset, fromBoxPubKey: string, isEncrypted = false) {
+    if (typeof asset !== "string") asset = asset.id;
+    return this.txHelper.receiveAsset(asset, fromBoxPubKey, isEncrypted);
   }
 
   async deal(mktId: string) {

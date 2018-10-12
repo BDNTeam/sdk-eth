@@ -104,9 +104,10 @@ export class MarketHelper {
   async autoApprove(spender: string, amount: number, txOpts = {}) {
     this.web3Helper.ensureAccountIsReady();
 
+    const opts = { ...cfg.eth.txOpts, ...txOpts };
     const allowance = await this.bdn.methods
       .allowance(this.web3Helper.web3.eth.defaultAccount, spender)
-      .call();
+      .call(opts);
 
     if (allowance === 0) {
       await this.approve(spender, amount, txOpts);
@@ -115,52 +116,88 @@ export class MarketHelper {
     }
   }
 
-  async buy(mktId: string, price: number, txOpts = {}) {
-    await this.autoApprove(mktId, price, txOpts);
-    const asset = await this.getAssetContract(mktId, txOpts);
+  async listenAssetPaid(
+    mktId: string,
+    cb: (
+      err,
+      info: { asset: string; buyer: string; buyerCdbAddress: string; buyerBoxAddress: string },
+    ) => void,
+    txOpts = {},
+  ) {
+    const opts = { ...cfg.eth.txOpts, ...txOpts };
+    const asset = await this.getAssetContract(mktId, opts);
+    asset.options.from = this.web3Helper.web3.eth.defaultAccount;
+    const a = asset as any;
+
+    a.once("Paid", null, (err, evt) => {
+      cb(err, evt.returnValues);
+    });
+  }
+
+  async isAssetBuyable(mktId: string, txOpts = {}) {
+    const opts = { ...cfg.eth.txOpts, ...txOpts };
+    const asset = await this.getAssetContract(mktId, opts);
+    asset.options.from = this.web3Helper.web3.eth.defaultAccount;
+    return asset.methods.isBuyable().call(opts);
+  }
+
+  async balanceOf(address: string, txOpts = {}) {
+    const opts = { ...cfg.eth.txOpts, ...txOpts };
+    return this.bdn.methods.balanceOf(address).call(opts);
+  }
+
+  async buy(
+    mktId: string,
+    buyerCdbAddress: string,
+    buyerBoxAddress: string,
+    price: number,
+    txOpts = {},
+  ) {
+    const isBuyable = await this.isAssetBuyable(mktId);
+    if (!isBuyable) throw new Error("asset is not buyable");
+
+    const balance = await this.balanceOf(this.web3Helper.web3.eth.defaultAccount);
+    if (balance < price) throw new Error("no sufficient balance");
+
+    const opts = { ...cfg.eth.txOpts, ...txOpts };
+    await this.autoApprove(mktId, price, opts);
+    const asset = await this.getAssetContract(mktId, opts);
     asset.options.from = this.web3Helper.web3.eth.defaultAccount;
 
     const a = asset as any;
     return new Promise<any>((resolve, reject) => {
-      a.once(
-        "NewBuyer",
-        { filter: { mktId, buyer: this.web3Helper.web3.eth.defaultAccount } },
-        (err, evt) => {
-          if (err) {
-            reject(err);
-            return;
-          }
-          resolve(evt.returnValues);
-        },
-      );
+      a.once("Paid", null, (err, evt) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        resolve(evt.returnValues);
+      });
       asset.methods
-        .buy(price)
-        .send()
+        .buy(buyerCdbAddress, buyerBoxAddress, price)
+        .send(opts)
         .catch(e => {
           e.message = "fail to buy: " + e.message;
-          throw e;
+          reject(e);
         });
     });
   }
 
   async deal(mktId: string, txOpts = {}) {
-    const asset = await this.getAssetContract(mktId, txOpts);
+    const opts = { ...cfg.eth.txOpts, ...txOpts };
+    const asset = await this.getAssetContract(mktId, opts);
     asset.options.from = this.web3Helper.web3.eth.defaultAccount;
 
     const a = asset as any;
     return new Promise<any>((resolve, reject) => {
-      a.once(
-        "NewDeal",
-        { filter: { mktId, operator: this.web3Helper.web3.eth.defaultAccount } },
-        (err, evt) => {
-          if (err) {
-            reject(err);
-            return;
-          }
-          resolve(evt.returnValues);
-        },
-      );
-      asset.methods.deal().send();
+      a.once("Dealt", null, (err, evt) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        resolve(evt.returnValues);
+      });
+      asset.methods.deal().send(opts);
     });
   }
 }

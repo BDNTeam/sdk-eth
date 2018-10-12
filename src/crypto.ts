@@ -1,19 +1,17 @@
-import crypto from "crypto";
+import Crypto from "crypto-js";
 
-export class Crypto {
+const AES = Crypto.AES;
+
+export class CryptoHelper {
   static algorithm = "aes-256-ctr";
 
-  static encrypt(data: string | Buffer, password: string) {
-    if (typeof data === "string") data = Buffer.from(data, "utf8");
-
-    const enc = crypto.createCipher(this.algorithm, password);
-    return Buffer.concat([enc.update(data), enc.final()]);
+  static encrypt(data: any, password: string): string {
+    data = JSON.stringify(data);
+    return AES.encrypt(data, password).toString();
   }
 
-  static decrypt(data: string | Buffer, password: string) {
-    if (typeof data === "string") data = Buffer.from(data, "base64");
-
-    const dec = crypto.createDecipher(this.algorithm, password);
-    return Buffer.concat([dec.update(data), dec.final()]);
+  static decrypt(data: string, password: string): string {
+    const dec = AES.decrypt(data, password).toString(Crypto.enc.Utf8);
+    return JSON.parse(dec);
   }
 }

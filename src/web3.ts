@@ -1,9 +1,5 @@
-import fs from "fs";
-import util from "util";
 import Web3 from "web3";
 import config from "./config";
-
-const read = util.promisify(fs.readFile);
 
 const isBrowser = typeof window !== "undefined";
 
@@ -54,11 +50,9 @@ export class Web3Helper {
     }
   }
 
-  async openWallet(walletPath: string, password: string) {
-    let data = await read(walletPath, { encoding: "utf8" });
-    data = JSON.parse(data);
+  async openWallet(walletData: string, password: string) {
     const w = this.web3!.eth.accounts.wallet as any;
-    w.decrypt(data, password);
+    w.decrypt(walletData, password);
   }
 
   addAccountFromPrivateKey(key: string) {
