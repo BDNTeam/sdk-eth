@@ -50,10 +50,15 @@ export class Seller {
   }
 
   async sell(assetId: string, price: number) {
-    return this.marketHelper.sell(assetId, price * Math.pow(10, 6));
+    return this.marketHelper.sell(
+      this.txHelper.keyPair.signPublicKey.toString(),
+      this.txHelper.keyPair.boxPublicKey.toString(),
+      assetId,
+      price * Math.pow(10, 6),
+    );
   }
 
-  async autoTransfer(mktId, cb: (err, tx?) => void, password?: string, txOpts = {}) {
+  async autoTransfer(mktId, cb: (err, paidInfo?, tx?) => void, password?: string, txOpts = {}) {
     return this.marketHelper.listenAssetPaid(
       mktId,
       async (err, info) => {
@@ -63,7 +68,7 @@ export class Seller {
         }
         const { asset, buyerCdbAddress, buyerBoxAddress } = info;
         const tx = await this.transfer(asset, buyerCdbAddress, password, buyerBoxAddress);
-        cb(null, tx);
+        cb(null, info, tx);
       },
       txOpts,
     );

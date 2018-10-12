@@ -50,7 +50,9 @@ import { Seller, SellerOpts, Buyer, BuyerOpts } from "../src";
   // the manual way is shown on below comment
   seller.autoTransfer(
     mktId,
-    async (err, tx) => {
+    async (err, paidInfo, tx) => {
+      // tx is the transfer transaction happens in chain database
+      // paidInfo is coming from payment notification
       if (err) {
         console.error(err);
         return;
@@ -61,11 +63,7 @@ import { Seller, SellerOpts, Buyer, BuyerOpts } from "../src";
 
       // ===================================
       // buyer get the asset and decrypt it
-      const buyerReceived = await buyer.receiveAsset(
-        assetId,
-        seller.txHelper.keyPair.boxPublicKey.toString(),
-        true,
-      );
+      const buyerReceived = await buyer.receiveAsset(assetId, paidInfo.sellerBoxAddress, true);
       console.log("--------");
       console.log("buyerReceived: ");
       console.log(buyerReceived);

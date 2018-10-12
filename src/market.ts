@@ -32,7 +32,7 @@ export class MarketHelper {
     return ContractFactory.createInst("Asset", addr, txOpts);
   }
 
-  async sell(asset: string, price: number, txOpts = {}) {
+  async sell(cdbAddress: string, boxAddress: string, asset: string, price: number, txOpts = {}) {
     this.web3Helper.ensureAccountIsReady();
 
     const opts = { ...cfg.eth.txOpts, ...txOpts };
@@ -45,7 +45,7 @@ export class MarketHelper {
         }
         return resolve(evt.returnValues.mktId);
       });
-      this.market.methods.sell(asset, price).send(opts);
+      this.market.methods.sell(cdbAddress, boxAddress, asset, price).send(opts);
     });
   }
 
