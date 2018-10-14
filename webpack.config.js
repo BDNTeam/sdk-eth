@@ -24,5 +24,7 @@ module.exports = {
     axios: "axios",
     ["crypto-js"]: "Crypto",
     web3: "web3",
+    tweetnacl: "nacl",
+    lodash: "_",
   },
 };

@@ -1,13 +1,12 @@
 import cfg from "./config";
 import axios from "axios";
-import url from "url";
 
 const abiCache: { [k: string]: any } = {};
 
 export class Api {
   static async buildUrl(path: string) {
     const srvAddr = cfg.base.sdkServer;
-    return url.resolve(srvAddr, path);
+    return srvAddr + path;
   }
 
   static async getAbi(name: string) {
