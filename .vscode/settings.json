@@ -19,6 +19,7 @@
         "testdata",
         "trackerid",
         "tweetnacl",
+        "typedoc",
         "unchoke"
     ]
 }
