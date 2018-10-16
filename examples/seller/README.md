@@ -13,14 +13,14 @@ export class Keypair {
 The `signPublicKey` works together with `privateKey` to perform chain database transaction.
 
 If you'd like your asset to be presented as cryptographic in chain database then you should to use
-a password to encrypt your asset, the sdk will do the encryption work for you just needs you provide
+a password to encrypt your asset, the sdk will do the encryption work for you just needs you to provide
 a password but it's your responsibility to keep the password is safe.
 
 Once the asset in ethereum is paid, you should to tell the buyer what is the password of your encrypted asset.
 You cannot send the plain password over network so you'll try to use the `boxPublicKey` of buyer to encrypt the
 password and send the encrypted stuff to buyer.
 
-Buyer will decrypt your `boxPublic Key` encrypted password by using his own `privateKey`.
+Buyer will decrypt your `boxPublicKey` encrypted password by using his own `privateKey`.
 
 ## asset id and mkt id
 
