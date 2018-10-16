@@ -36,6 +36,7 @@
     "@types/node": "^10.5.2",
     "@types/text-encoding": "0.0.34",
     "@types/web3": "^1.0.7",
+    "@types/websocket": "0.0.40",
     "@types/ws": "^6.0.1",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.3.0",
@@ -72,6 +73,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bigchaindb-driver": "^4.1.0",
+    "browser-or-node": "^1.1.0",
     "bs58": "^4.0.1",
     "crypto-js": "^3.1.9-1",
     "debug": "^4.1.0",
@@ -82,6 +84,6 @@
     "text-encoding": "^0.7.0",
     "tweetnacl": "^1.0.0",
     "web3": "^1.0.0-beta.36",
-    "ws": "^6.1.0"
+    "websocket": "^1.0.28"
   }
 }

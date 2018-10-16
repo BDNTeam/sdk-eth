@@ -69,6 +69,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Constructs a chain database keypair from an ethereum account</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -110,7 +117,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/keypair.ts#L20">keypair.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/keypair.ts#L39">keypair.ts:39</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -140,9 +147,15 @@
 					<div class="tsd-signature tsd-kind-icon">box<wbr>Public<wbr>Key<span class="tsd-signature-symbol">:</span> <a href="_keypair_.key.html" class="tsd-signature-type">Key</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/keypair.ts#L19">keypair.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/keypair.ts#L37">keypair.ts:37</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>used as signature of shipper if it&#39;s used as seller&#39;s keypair or as signature of recipient
+							if it&#39;s being used as buyer&#39;s keypair, works with <a href="_keypair_.keypair.html#privatekey">privateKey</a> to encrypt or decrypt asset</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="privatekey" class="tsd-anchor"></a>
@@ -150,7 +163,7 @@
 					<div class="tsd-signature tsd-kind-icon">private<wbr>Key<span class="tsd-signature-symbol">:</span> <a href="_keypair_.key.html" class="tsd-signature-type">Key</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/keypair.ts#L20">keypair.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/keypair.ts#L39">keypair.ts:39</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -160,9 +173,15 @@
 					<div class="tsd-signature tsd-kind-icon">sign<wbr>Public<wbr>Key<span class="tsd-signature-symbol">:</span> <a href="_keypair_.key.html" class="tsd-signature-type">Key</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/keypair.ts#L18">keypair.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/keypair.ts#L31">keypair.ts:31</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>address in chain database, used to identify a virtual user in chain database and works
+							with <a href="_keypair_.keypair.html#privatekey">privateKey</a> to sign transactions of chain database</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>

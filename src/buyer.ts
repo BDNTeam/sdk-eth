@@ -9,9 +9,14 @@ import { Web3Helper } from "./web3";
  */
 export class BuyerOpts {
   /**
-   * The http address of chain database node
+   * The http address of a chain database node
    */
   dbNode: string;
+
+  /**
+   * The websocket address of a chain database node
+   */
+  dbWsNode: string;
 
   /**
    * The private key of buyer's ethereum account, this field
@@ -61,7 +66,7 @@ export class Buyer {
 
     const w = this.web3Helper.web3.eth.accounts.wallet as any;
     const account = w[this.web3Helper.web3.eth.defaultAccount];
-    this.txHelper = new TransactionHelper(this.opts.dbNode, account);
+    this.txHelper = new TransactionHelper(this.opts.dbNode, this.opts.dbWsNode, account);
 
     this.marketHelper = new MarketHelper();
     await this.marketHelper.init(this.web3Helper, txOpts);
@@ -80,6 +85,13 @@ export class Buyer {
       this.txHelper.keyPair.boxPublicKey.toString(),
       price * Math.pow(10, 6),
     );
+  }
+
+  async autoReceiveAsset(asset, cb: (data) => boolean, fromBoxPubKey?: string) {
+    this.txHelper.ws.addEventListener("message", evt => {
+      const stop = cb(evt);
+      if (stop) this.txHelper.ws.removeEventListener("message", cb);
+    });
   }
 
   /**

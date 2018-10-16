@@ -69,6 +69,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Encapsulates some buyer&#39;s logics</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -99,6 +106,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_buyer_.buyer.html#autoreceiveasset" class="tsd-kind-icon">auto<wbr>Receive<wbr>Asset</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_buyer_.buyer.html#buy" class="tsd-kind-icon">buy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_buyer_.buyer.html#deal" class="tsd-kind-icon">deal</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_buyer_.buyer.html#init" class="tsd-kind-icon">init</a></li>
@@ -120,7 +128,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/buyer.ts#L19">buyer.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L46">buyer.ts:46</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -142,7 +150,7 @@
 					<div class="tsd-signature tsd-kind-icon">market<wbr>Helper<span class="tsd-signature-symbol">:</span> <a href="_market_.markethelper.html" class="tsd-signature-type">MarketHelper</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/buyer.ts#L19">buyer.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L46">buyer.ts:46</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -152,7 +160,7 @@
 					<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <a href="_buyer_.buyeropts.html" class="tsd-signature-type">BuyerOpts</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/buyer.ts#L15">buyer.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L42">buyer.ts:42</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -162,7 +170,7 @@
 					<div class="tsd-signature tsd-kind-icon">tx<wbr>Helper<span class="tsd-signature-symbol">:</span> <a href="_transaction_.transactionhelper.html" class="tsd-signature-type">TransactionHelper</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/buyer.ts#L18">buyer.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L45">buyer.ts:45</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -172,13 +180,60 @@
 					<div class="tsd-signature tsd-kind-icon">web3<wbr>Helper<span class="tsd-signature-symbol">:</span> <a href="_web3_.web3helper.html" class="tsd-signature-type">Web3Helper</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/buyer.ts#L17">buyer.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L44">buyer.ts:44</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="autoreceiveasset" class="tsd-anchor"></a>
+					<h3>auto<wbr>Receive<wbr>Asset</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">auto<wbr>Receive<wbr>Asset<span class="tsd-signature-symbol">(</span>asset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, cb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, fromBoxPubKey<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L90">buyer.ts:90</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>asset: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>cb: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>data: <span class="tsd-signature-type">any</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fromBoxPubKey: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="buy" class="tsd-anchor"></a>
 					<h3>buy</h3>
@@ -189,16 +244,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/buyer.ts#L43">buyer.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L81">buyer.ts:81</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Buys the asset</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>mktId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The mkt id is the identifier of chain database asset in ethereum</p>
+									</div>
 								</li>
 								<li>
 									<h5>price: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Should be greater or equal that value expected by seller</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -215,13 +281,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/buyer.ts#L57">buyer.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L115">buyer.ts:115</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>After buyer accepts the validation of a asset, he should call this method to tell system that
+									his paid money is safe to seller</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>mktId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -238,13 +312,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/buyer.ts#L26">buyer.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L58">buyer.ts:58</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This method should be called after constructing a buyer instance to finish setups</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> txOpts: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Options used for process a ethereum transaction</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -255,28 +337,36 @@
 					<a name="receiveasset" class="tsd-anchor"></a>
 					<h3>receive<wbr>Asset</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">receive<wbr>Asset<span class="tsd-signature-symbol">(</span>asset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, fromBoxPubKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, isEncrypted<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">receive<wbr>Asset<span class="tsd-signature-symbol">(</span>asset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, fromBoxPubKey<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/8aa4086/src/buyer.ts#L52">buyer.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L104">buyer.ts:104</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Used to receive the asset after seller transferred the asset</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>asset: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The id of asset in chain database</p>
+									</div>
 								</li>
 								<li>
-									<h5>fromBoxPubKey: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> isEncrypted: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fromBoxPubKey: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The shipper address of seller, used to decrypted the encrypted data</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -344,6 +434,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_buyer_.buyer.html#web3helper" class="tsd-kind-icon">web3<wbr>Helper</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_buyer_.buyer.html#autoreceiveasset" class="tsd-kind-icon">auto<wbr>Receive<wbr>Asset</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_buyer_.buyer.html#buy" class="tsd-kind-icon">buy</a>

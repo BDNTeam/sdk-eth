@@ -22,8 +22,8 @@ module.exports = {
   },
   externals: {
     axios: "axios",
-    ["crypto-js"]: "Crypto",
-    web3: "web3",
+    ["crypto-js"]: "CryptoJS",
+    web3: "Web3",
     tweetnacl: "nacl",
     lodash: "_",
   },

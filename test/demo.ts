@@ -4,10 +4,12 @@ import { Seller, SellerOpts, Buyer, BuyerOpts } from "../src";
 
 (async () => {
   const API_PATH = "http://104.238.140.52:9984/api/v1/";
+  const WS_PATH = "ws://104.238.140.52:9985/api/v1/streams/valid_transactions";
 
   // a seller
   const sellerOpts: SellerOpts = {
     dbNode: API_PATH,
+    dbWsNode: WS_PATH,
     privateKey: "0x92ee15949f64413e3d4b86fb941497d0696ecd189d002091f6746444c8aae460",
   };
   const seller = new Seller(sellerOpts);
@@ -16,6 +18,7 @@ import { Seller, SellerOpts, Buyer, BuyerOpts } from "../src";
   // a buyer
   const buyerOpts: BuyerOpts = {
     dbNode: API_PATH,
+    dbWsNode: WS_PATH,
     privateKey: "0xf589d1f3df593ebb5d8870cb9689717f548d907948e0aa43bdc59ab90c7b35fc",
   };
   const buyer = new Buyer(buyerOpts);
@@ -63,7 +66,7 @@ import { Seller, SellerOpts, Buyer, BuyerOpts } from "../src";
 
       // ===================================
       // buyer get the asset and decrypt it
-      const buyerReceived = await buyer.receiveAsset(assetId, paidInfo.sellerBoxAddress, true);
+      const buyerReceived = await buyer.receiveAsset(assetId, paidInfo.sellerBoxAddress);
       console.log("--------");
       console.log("buyerReceived: ");
       console.log(buyerReceived);

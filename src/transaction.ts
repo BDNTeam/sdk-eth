@@ -2,13 +2,17 @@ import base58 from "bs58";
 import _ from "lodash";
 import { TextDecoder, TextEncoder } from "text-encoding";
 import nacl from "tweetnacl";
+import url from "url";
 import { CryptoHelper } from "./crypto";
 import { Key, Keypair } from "./keypair";
+import { isBrowser, isNode } from "browser-or-node";
 
 // tslint:disable-next-line:no-var-requires
 const driver = require("bigchaindb-driver");
 
 export const dbDriver = driver;
+
+export class Ws {}
 
 /**
  * Helper to perform transaction in chain database
@@ -17,12 +21,19 @@ export class TransactionHelper {
   apiPath = "";
   conn: any;
 
+  wsPath = "";
+  ws: WebSocket;
+
   keyPair: Keypair;
 
-  constructor(apiPath = "", account: any) {
+  constructor(apiPath = "", wsPath = "", account: any) {
+    this.setKeyPair(account);
+
     this.apiPath = apiPath;
     this.conn = new driver.Connection(apiPath);
-    this.setKeyPair(account);
+
+    this.wsPath = wsPath;
+    this.ws = new WebSocket(this.wsPath);
   }
 
   /**
