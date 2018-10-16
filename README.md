@@ -4,13 +4,13 @@ SDK for using Chain Data Base together with Ethereum
 
 ## Documents and examples
 
-A seller example is located at [doc/seller](doc/seller)
+A seller example is located at [doc/seller](examples/seller)
 
 A buyer example is located at [examples/buyer](examples/buyer)
 
 A complete example is located at [examples/simple](examples/simple)
 
-API is located at [](doc/api)
+API is located at [doc/api](doc/api)
 
 ## Development
 
