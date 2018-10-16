@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;crypto&quot; | chain-db-sdk-eth</title>
+	<title>CryptoHelper | chain-db-sdk-eth</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,46 +56,113 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_crypto_.html">&quot;crypto&quot;</a>
+					<a href="../modules/_crypto_.html">&quot;crypto&quot;</a>
+				</li>
+				<li>
+					<a href="_crypto_.cryptohelper.html">CryptoHelper</a>
 				</li>
 			</ul>
-			<h1>External module &quot;crypto&quot;</h1>
+			<h1>Class CryptoHelper</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">CryptoHelper</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_crypto_.cryptohelper.html" class="tsd-kind-icon">Crypto<wbr>Helper</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_crypto_.cryptohelper.html#algorithm" class="tsd-kind-icon">algorithm</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Variables</h3>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_crypto_.html#aes" class="tsd-kind-icon">AES</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_crypto_.cryptohelper.html#decrypt" class="tsd-kind-icon">decrypt</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_crypto_.cryptohelper.html#encrypt" class="tsd-kind-icon">encrypt</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="aes" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> AES</h3>
-					<div class="tsd-signature tsd-kind-icon">AES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CipherHelper</span><span class="tsd-signature-symbol"> =&nbsp;Crypto.AES</span></div>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="algorithm" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> algorithm</h3>
+					<div class="tsd-signature tsd-kind-icon">algorithm<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;aes-256-ctr&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/crypto.ts#L3">crypto.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/crypto.ts#L6">crypto.ts:6</a></li>
 						</ul>
 					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="decrypt" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> decrypt</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">decrypt<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/crypto.ts#L13">crypto.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>password: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="encrypt" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> encrypt</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">encrypt<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/crypto.ts#L8">crypto.ts:8</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>password: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -106,47 +173,62 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_api_.html">"api"</a>
+						<a href="../modules/_api_.html">"api"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_buyer_.html">"buyer"</a>
+						<a href="../modules/_buyer_.html">"buyer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_config_.html">"config"</a>
+						<a href="../modules/_config_.html">"config"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_contract_factory_.html">"contract-<wbr>factory"</a>
+						<a href="../modules/_contract_factory_.html">"contract-<wbr>factory"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_crypto_.html">"crypto"</a>
+						<a href="../modules/_crypto_.html">"crypto"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">"index"</a>
+						<a href="../modules/_index_.html">"index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_keypair_.html">"keypair"</a>
+						<a href="../modules/_keypair_.html">"keypair"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_market_.html">"market"</a>
+						<a href="../modules/_market_.html">"market"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_seller_.html">"seller"</a>
+						<a href="../modules/_seller_.html">"seller"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_transaction_.html">"transaction"</a>
+						<a href="../modules/_transaction_.html">"transaction"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_web3_.html">"web3"</a>
+						<a href="../modules/_web3_.html">"web3"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_crypto_.cryptohelper.html" class="tsd-kind-icon">Crypto<wbr>Helper</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_crypto_.cryptohelper.html" class="tsd-kind-icon">Crypto<wbr>Helper</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_crypto_.cryptohelper.html#algorithm" class="tsd-kind-icon">algorithm</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="_crypto_.cryptohelper.html#decrypt" class="tsd-kind-icon">decrypt</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="_crypto_.cryptohelper.html#encrypt" class="tsd-kind-icon">encrypt</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_crypto_.html#aes" class="tsd-kind-icon">AES</a>
+						<a href="../modules/_crypto_.html#aes" class="tsd-kind-icon">AES</a>
 					</li>
 				</ul>
 			</nav>

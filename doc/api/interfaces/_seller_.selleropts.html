@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;web3&quot; | chain-db-sdk-eth</title>
+	<title>SellerOpts | chain-db-sdk-eth</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,90 +56,128 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_web3_.html">&quot;web3&quot;</a>
+					<a href="../modules/_seller_.html">&quot;seller&quot;</a>
+				</li>
+				<li>
+					<a href="_seller_.selleropts.html">SellerOpts</a>
 				</li>
 			</ul>
-			<h1>External module &quot;web3&quot;</h1>
+			<h1>Interface SellerOpts</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Options to initialize a seller</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">SellerOpts</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_web3_.metamasknotinstallederr.html" class="tsd-kind-icon">Meta<wbr>Mask<wbr>Not<wbr>Installed<wbr>Err</a></li>
-								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_web3_.web3helper.html" class="tsd-kind-icon">Web3<wbr>Helper</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_web3_.initweb3params.html" class="tsd-kind-icon">Init<wbr>Web3<wbr>Params</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Variables</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_web3_.html#isbrowser" class="tsd-kind-icon">is<wbr>Browser</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_web3_.html#iswindowloaded" class="tsd-kind-icon">is<wbr>Window<wbr>Loaded</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_web3_.html#getinstalledweb3" class="tsd-kind-icon">get<wbr>Installed<wbr>Web3</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_seller_.selleropts.html#dbnode" class="tsd-kind-icon">db<wbr>Node</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_seller_.selleropts.html#dbwsnode" class="tsd-kind-icon">db<wbr>WsNode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_seller_.selleropts.html#ethnode" class="tsd-kind-icon">eth<wbr>Node</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_seller_.selleropts.html#metamask" class="tsd-kind-icon">meta<wbr>Mask</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_seller_.selleropts.html#privatekey" class="tsd-kind-icon">private<wbr>Key</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="isbrowser" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Browser</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Browser<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;typeof window !&#x3D;&#x3D; &quot;undefined&quot;</span></div>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="dbnode" class="tsd-anchor"></a>
+					<h3>db<wbr>Node</h3>
+					<div class="tsd-signature tsd-kind-icon">db<wbr>Node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/web3.ts#L4">web3.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/seller.ts#L14">seller.ts:14</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The http address of a chain database node</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="iswindowloaded" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagLet">Let</span> is<wbr>Window<wbr>Loaded</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Window<wbr>Loaded<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="dbwsnode" class="tsd-anchor"></a>
+					<h3>db<wbr>WsNode</h3>
+					<div class="tsd-signature tsd-kind-icon">db<wbr>WsNode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/web3.ts#L6">web3.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/seller.ts#L19">seller.ts:19</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The websocket address of a chain database node</p>
+						</div>
+					</div>
 				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="getinstalledweb3" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Installed<wbr>Web3</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Installed<wbr>Web3<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/web3.ts#L13">web3.ts:13</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="ethnode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> eth<wbr>Node</h3>
+					<div class="tsd-signature tsd-kind-icon">eth<wbr>Node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/seller.ts#L35">seller.ts:35</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The http address of the ethereum node</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="metamask" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> meta<wbr>Mask</h3>
+					<div class="tsd-signature tsd-kind-icon">meta<wbr>Mask<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/seller.ts#L30">seller.ts:30</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Use MetaMask or not</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="privatekey" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> private<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">private<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/seller.ts#L25">seller.ts:25</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The private key of seller&#39;s ethereum account, this field
+							can be optional if <a href="_seller_.selleropts.html#metamask">metaMask</a> is set to <code>true</code></p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -150,60 +188,69 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_api_.html">"api"</a>
+						<a href="../modules/_api_.html">"api"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_buyer_.html">"buyer"</a>
+						<a href="../modules/_buyer_.html">"buyer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_config_.html">"config"</a>
+						<a href="../modules/_config_.html">"config"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_contract_factory_.html">"contract-<wbr>factory"</a>
+						<a href="../modules/_contract_factory_.html">"contract-<wbr>factory"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_crypto_.html">"crypto"</a>
+						<a href="../modules/_crypto_.html">"crypto"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">"index"</a>
+						<a href="../modules/_index_.html">"index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_keypair_.html">"keypair"</a>
+						<a href="../modules/_keypair_.html">"keypair"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_market_.html">"market"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_seller_.html">"seller"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_transaction_.html">"transaction"</a>
+						<a href="../modules/_market_.html">"market"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_web3_.html">"web3"</a>
+						<a href="../modules/_seller_.html">"seller"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_transaction_.html">"transaction"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_web3_.html">"web3"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_web3_.metamasknotinstallederr.html" class="tsd-kind-icon">Meta<wbr>Mask<wbr>Not<wbr>Installed<wbr>Err</a>
+						<a href="../classes/_seller_.seller.html" class="tsd-kind-icon">Seller</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_web3_.web3helper.html" class="tsd-kind-icon">Web3<wbr>Helper</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_seller_.selleropts.html" class="tsd-kind-icon">Seller<wbr>Opts</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_seller_.selleropts.html#dbnode" class="tsd-kind-icon">db<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_seller_.selleropts.html#dbwsnode" class="tsd-kind-icon">db<wbr>WsNode</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_seller_.selleropts.html#ethnode" class="tsd-kind-icon">eth<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_seller_.selleropts.html#metamask" class="tsd-kind-icon">meta<wbr>Mask</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_seller_.selleropts.html#privatekey" class="tsd-kind-icon">private<wbr>Key</a>
+							</li>
+						</ul>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_web3_.initweb3params.html" class="tsd-kind-icon">Init<wbr>Web3<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_web3_.html#isbrowser" class="tsd-kind-icon">is<wbr>Browser</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_web3_.html#iswindowloaded" class="tsd-kind-icon">is<wbr>Window<wbr>Loaded</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_web3_.html#getinstalledweb3" class="tsd-kind-icon">get<wbr>Installed<wbr>Web3</a>
-					</li>
+				</ul>
+				<ul class="after-current">
 				</ul>
 			</nav>
 		</div>

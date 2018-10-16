@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;transaction&quot; | chain-db-sdk-eth</title>
+	<title>&quot;market&quot; | chain-db-sdk-eth</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_transaction_.html">&quot;transaction&quot;</a>
+					<a href="_market_.html">&quot;market&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;transaction&quot;</h1>
+			<h1>External module &quot;market&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,39 +73,27 @@
 						<section class="tsd-index-section ">
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_transaction_.transactionhelper.html" class="tsd-kind-icon">Transaction<wbr>Helper</a></li>
-								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_transaction_.ws.html" class="tsd-kind-icon">Ws</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_market_.markethelper.html" class="tsd-kind-icon">Market<wbr>Helper</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_transaction_.html#dbdriver" class="tsd-kind-icon">db<wbr>Driver</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_transaction_.html#driver" class="tsd-kind-icon">driver</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_market_.html#log" class="tsd-kind-icon">log</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="dbdriver" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> db<wbr>Driver</h3>
-					<div class="tsd-signature tsd-kind-icon">db<wbr>Driver<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;driver</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/transaction.ts#L13">transaction.ts:13</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="driver" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> driver</h3>
-					<div class="tsd-signature tsd-kind-icon">driver<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require(&quot;bigchaindb-driver&quot;)</span></div>
+					<a name="log" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> log</h3>
+					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IDebugger</span><span class="tsd-signature-symbol"> =&nbsp;debug(&quot;CDB-SDK:market&quot;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/transaction.ts#L11">transaction.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/market.ts#L9">market.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -138,13 +126,13 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_keypair_.html">"keypair"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="_market_.html">"market"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_seller_.html">"seller"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="_transaction_.html">"transaction"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -155,16 +143,10 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_transaction_.transactionhelper.html" class="tsd-kind-icon">Transaction<wbr>Helper</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_transaction_.ws.html" class="tsd-kind-icon">Ws</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="_transaction_.html#dbdriver" class="tsd-kind-icon">db<wbr>Driver</a>
+						<a href="../classes/_market_.markethelper.html" class="tsd-kind-icon">Market<wbr>Helper</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_transaction_.html#driver" class="tsd-kind-icon">driver</a>
+						<a href="_market_.html#log" class="tsd-kind-icon">log</a>
 					</li>
 				</ul>
 			</nav>

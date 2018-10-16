@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>BuyerOpts | chain-db-sdk-eth</title>
+	<title>Web3Helper | chain-db-sdk-eth</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_buyer_.html">&quot;buyer&quot;</a>
+					<a href="../modules/_web3_.html">&quot;web3&quot;</a>
 				</li>
 				<li>
-					<a href="_buyer_.buyeropts.html">BuyerOpts</a>
+					<a href="_web3_.web3helper.html">Web3Helper</a>
 				</li>
 			</ul>
-			<h1>Class BuyerOpts</h1>
+			<h1>Class Web3Helper</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Options to initialize a buyer</p>
+						<p>Helper of web3</p>
 					</div>
 				</div>
 			</section>
@@ -80,7 +80,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">BuyerOpts</span>
+						<span class="target">Web3Helper</span>
 					</li>
 				</ul>
 			</section>
@@ -91,11 +91,16 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_buyer_.buyeropts.html#dbnode" class="tsd-kind-icon">db<wbr>Node</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_buyer_.buyeropts.html#dbwsnode" class="tsd-kind-icon">db<wbr>WsNode</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_buyer_.buyeropts.html#ethnode" class="tsd-kind-icon">eth<wbr>Node</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_buyer_.buyeropts.html#metamask" class="tsd-kind-icon">meta<wbr>Mask</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_buyer_.buyeropts.html#privatekey" class="tsd-kind-icon">private<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_web3_.web3helper.html#web3" class="tsd-kind-icon">web3</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_web3_.web3helper.html#addaccountfromprivatekey" class="tsd-kind-icon">add<wbr>Account<wbr>From<wbr>Private<wbr>Key</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_web3_.web3helper.html#ensureaccountisready" class="tsd-kind-icon">ensure<wbr>Account<wbr>IsReady</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_web3_.web3helper.html#init" class="tsd-kind-icon">init</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_web3_.web3helper.html#openwallet" class="tsd-kind-icon">open<wbr>Wallet</a></li>
 							</ul>
 						</section>
 					</div>
@@ -104,80 +109,106 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="dbnode" class="tsd-anchor"></a>
-					<h3>db<wbr>Node</h3>
-					<div class="tsd-signature tsd-kind-icon">db<wbr>Node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="web3" class="tsd-anchor"></a>
+					<h3>web3</h3>
+					<div class="tsd-signature tsd-kind-icon">web3<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Web3</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L14">buyer.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/web3.ts#L44">web3.ts:44</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The http address of a chain database node</p>
-						</div>
-					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="dbwsnode" class="tsd-anchor"></a>
-					<h3>db<wbr>WsNode</h3>
-					<div class="tsd-signature tsd-kind-icon">db<wbr>WsNode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L19">buyer.ts:19</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The websocket address of a chain database node</p>
-						</div>
-					</div>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addaccountfromprivatekey" class="tsd-anchor"></a>
+					<h3>add<wbr>Account<wbr>From<wbr>Private<wbr>Key</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Account<wbr>From<wbr>Private<wbr>Key<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/web3.ts#L68">web3.ts:68</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="ethnode" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> eth<wbr>Node</h3>
-					<div class="tsd-signature tsd-kind-icon">eth<wbr>Node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L35">buyer.ts:35</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The http address of the ethereum node</p>
-						</div>
-					</div>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="ensureaccountisready" class="tsd-anchor"></a>
+					<h3>ensure<wbr>Account<wbr>IsReady</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">ensure<wbr>Account<wbr>IsReady<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/web3.ts#L74">web3.ts:74</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="metamask" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> meta<wbr>Mask</h3>
-					<div class="tsd-signature tsd-kind-icon">meta<wbr>Mask<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L30">buyer.ts:30</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Use MetaMask or not</p>
-						</div>
-					</div>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="init" class="tsd-anchor"></a>
+					<h3>init</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">init<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_web3_.initweb3params.html" class="tsd-signature-type">InitWeb3Params</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/web3.ts#L46">web3.ts:46</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> params: <a href="../interfaces/_web3_.initweb3params.html" class="tsd-signature-type">InitWeb3Params</a><span class="tsd-signature-symbol"> =&nbsp;{metaMask: config.eth.metaMask,node: config.eth.node,}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="privatekey" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> private<wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">private<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/6c098a1/src/buyer.ts#L25">buyer.ts:25</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The private key of buyer&#39;s ethereum account, this field
-							can be optional if <a href="_buyer_.buyeropts.html#metamask">metaMask</a> is set to <code>true</code></p>
-						</div>
-					</div>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="openwallet" class="tsd-anchor"></a>
+					<h3>open<wbr>Wallet</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">open<wbr>Wallet<span class="tsd-signature-symbol">(</span>walletData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BDNTeam/sdk-eth/blob/545c5a2/src/web3.ts#L63">web3.ts:63</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>walletData: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>password: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -190,7 +221,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_api_.html">"api"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_buyer_.html">"buyer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -217,7 +248,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_transaction_.html">"transaction"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="../modules/_web3_.html">"web3"</a>
 					</li>
 				</ul>
@@ -225,32 +256,44 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_buyer_.buyer.html" class="tsd-kind-icon">Buyer</a>
+						<a href="_web3_.metamasknotinstallederr.html" class="tsd-kind-icon">Meta<wbr>Mask<wbr>Not<wbr>Installed<wbr>Err</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_buyer_.buyeropts.html" class="tsd-kind-icon">Buyer<wbr>Opts</a>
+						<a href="_web3_.web3helper.html" class="tsd-kind-icon">Web3<wbr>Helper</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_buyer_.buyeropts.html#dbnode" class="tsd-kind-icon">db<wbr>Node</a>
+								<a href="_web3_.web3helper.html#web3" class="tsd-kind-icon">web3</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_buyer_.buyeropts.html#dbwsnode" class="tsd-kind-icon">db<wbr>WsNode</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_web3_.web3helper.html#addaccountfromprivatekey" class="tsd-kind-icon">add<wbr>Account<wbr>From<wbr>Private<wbr>Key</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_buyer_.buyeropts.html#ethnode" class="tsd-kind-icon">eth<wbr>Node</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_web3_.web3helper.html#ensureaccountisready" class="tsd-kind-icon">ensure<wbr>Account<wbr>IsReady</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_buyer_.buyeropts.html#metamask" class="tsd-kind-icon">meta<wbr>Mask</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_web3_.web3helper.html#init" class="tsd-kind-icon">init</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_buyer_.buyeropts.html#privatekey" class="tsd-kind-icon">private<wbr>Key</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_web3_.web3helper.html#openwallet" class="tsd-kind-icon">open<wbr>Wallet</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_web3_.initweb3params.html" class="tsd-kind-icon">Init<wbr>Web3<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_web3_.html#isbrowser" class="tsd-kind-icon">is<wbr>Browser</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_web3_.html#iswindowloaded" class="tsd-kind-icon">is<wbr>Window<wbr>Loaded</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_web3_.html#getinstalledweb3" class="tsd-kind-icon">get<wbr>Installed<wbr>Web3</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
