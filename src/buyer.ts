@@ -87,11 +87,11 @@ export class Buyer {
     );
   }
 
-  async autoReceiveAsset(asset, cb: (data) => boolean, fromBoxPubKey?: string) {
-    this.txHelper.ws.addEventListener("message", evt => {
-      const stop = cb(evt);
-      if (stop) this.txHelper.ws.removeEventListener("message", cb);
-    });
+  async autoReceiveAsset(asset, cb: (data) => void, fromBoxPubKey?: string) {
+    this.txHelper.addValidTxHandler(async data => {
+      const resp = await this.txHelper.receiveAsset(asset, fromBoxPubKey);
+      cb(resp);
+    }, asset);
   }
 
   /**

@@ -43,6 +43,20 @@ import { Seller, SellerOpts, Buyer, BuyerOpts } from "../../src";
   console.log("--------");
   console.log("mktId: " + mktId);
 
+  buyer.autoReceiveAsset(
+    assetId,
+    async data => {
+      console.log("buyer auto receive: ");
+      console.log(data);
+
+      const dealt = await buyer.deal(mktId);
+      console.log("--------");
+      console.log("dealt: ");
+      console.log(dealt);
+    },
+    seller.txHelper.keyPair.boxPublicKey.toString(),
+  );
+
   // seller could choose either the automatic or manual way to transfer his asset
   //
   // the automatic transfer process should be run as a daemon, once it
@@ -60,28 +74,24 @@ import { Seller, SellerOpts, Buyer, BuyerOpts } from "../../src";
         console.error(err);
         return;
       }
+
       console.log("--------");
       console.log("auto transfer succeed:");
       console.log(tx);
 
-      buyer.autoReceiveAsset(assetId, data => {
-        console.log(data);
-        return true;
-      });
-
       // ===================================
       // buyer get the asset and decrypt it
-      const buyerReceived = await buyer.receiveAsset(assetId, paidInfo.sellerBoxAddress);
-      console.log("--------");
-      console.log("buyerReceived: ");
-      console.log(buyerReceived);
+      // const buyerReceived = await buyer.receiveAsset(assetId, paidInfo.sellerBoxAddress);
+      // console.log("--------");
+      // console.log("buyerReceived: ");
+      // console.log(buyerReceived);
 
       // ===================================
       // buyer should mark the asset as dealt if the asset is pass the validation by himself
-      const dealt = await buyer.deal(mktId);
-      console.log("--------");
-      console.log("dealt: ");
-      console.log(dealt);
+      // const dealt = await buyer.deal(mktId);
+      // console.log("--------");
+      // console.log("dealt: ");
+      // console.log(dealt);
     },
     pwd,
   );

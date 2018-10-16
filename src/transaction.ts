@@ -2,10 +2,8 @@ import base58 from "bs58";
 import _ from "lodash";
 import { TextDecoder, TextEncoder } from "text-encoding";
 import nacl from "tweetnacl";
-import url from "url";
 import { CryptoHelper } from "./crypto";
 import { Key, Keypair } from "./keypair";
-import { isBrowser, isNode } from "browser-or-node";
 
 // tslint:disable-next-line:no-var-requires
 const driver = require("bigchaindb-driver");
@@ -13,6 +11,11 @@ const driver = require("bigchaindb-driver");
 export const dbDriver = driver;
 
 export class Ws {}
+
+export class ValidTxHandler {
+  handle: (data) => void;
+  filter: { assetId?: string; txId?: string };
+}
 
 /**
  * Helper to perform transaction in chain database
@@ -26,6 +29,8 @@ export class TransactionHelper {
 
   keyPair: Keypair;
 
+  validTxHandlers: ValidTxHandler[] = [];
+
   constructor(apiPath = "", wsPath = "", account: any) {
     this.setKeyPair(account);
 
@@ -34,6 +39,7 @@ export class TransactionHelper {
 
     this.wsPath = wsPath;
     this.ws = new WebSocket(this.wsPath);
+    this.ws.addEventListener("message", this.handleValidTx);
   }
 
   /**
@@ -152,6 +158,36 @@ export class TransactionHelper {
     }
 
     return asset.data;
+  }
+
+  handleValidTx = evt => {
+    let data: { asset_id: string; transaction_id: string } | null = null;
+    try {
+      data = JSON.parse(evt.data);
+    } catch (e) {}
+    if (data === null) return;
+
+    const handlers: ValidTxHandler[] = [];
+    this.validTxHandlers = this.validTxHandlers.filter(h => {
+      const match =
+        (h.filter.assetId && h.filter.assetId === data!.asset_id) ||
+        (h.filter.txId && h.filter.txId === data!.transaction_id);
+      if (match) {
+        handlers.push(h);
+      }
+      return !match;
+    });
+    handlers.forEach(h => h.handle(data));
+  };
+
+  addValidTxHandler(handle: (data) => void, assetId?: string, txId?: string) {
+    this.validTxHandlers.push({
+      handle,
+      filter: {
+        assetId,
+        txId,
+      },
+    });
   }
 
   // async sell(asset: string, price: number): Promise<string> {}
