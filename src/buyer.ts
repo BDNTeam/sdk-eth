@@ -4,13 +4,35 @@ import { MarketHelper } from "./market";
 import { TransactionHelper } from "./transaction";
 import { Web3Helper } from "./web3";
 
+/**
+ * Options to initialize a buyer
+ */
 export class BuyerOpts {
+  /**
+   * The http address of chain database node
+   */
   dbNode: string;
+
+  /**
+   * The private key of buyer's ethereum account, this field
+   * can be optional if [[metaMask]] is set to `true`
+   */
   privateKey?: string;
+
+  /**
+   * Use MetaMask or not
+   */
   metaMask?: boolean;
+
+  /**
+   * The http address of the ethereum node
+   */
   ethNode?: string;
 }
 
+/**
+ * Encapsulates some buyer's logics
+ */
 export class Buyer {
   opts: BuyerOpts;
 
@@ -23,6 +45,11 @@ export class Buyer {
     this.opts = opts;
   }
 
+  /**
+   * This method should be called after constructing a buyer instance to finish setups
+   *
+   * @param txOpts Options used for process a ethereum transaction
+   */
   async init(txOpts: any = {}) {
     this.web3Helper = new Web3Helper();
 
@@ -40,6 +67,12 @@ export class Buyer {
     await this.marketHelper.init(this.web3Helper, txOpts);
   }
 
+  /**
+   * Buys the asset
+   *
+   * @param mktId The mkt id is the identifier of chain database asset in ethereum
+   * @param price Should be greater or equal that value expected by seller
+   */
   async buy(mktId: string, price: number) {
     return this.marketHelper.buy(
       mktId,
@@ -49,11 +82,24 @@ export class Buyer {
     );
   }
 
-  async receiveAsset(asset, fromBoxPubKey: string, isEncrypted = false) {
+  /**
+   * Used to receive the asset after seller transferred the asset
+   *
+   * @param asset The id of asset in chain database
+   * @param fromBoxPubKey The shipper address of seller, used to decrypted the encrypted data
+   * @param isEncrypted
+   */
+  async receiveAsset(asset, fromBoxPubKey?: string) {
     if (typeof asset !== "string") asset = asset.id;
-    return this.txHelper.receiveAsset(asset, fromBoxPubKey, isEncrypted);
+    return this.txHelper.receiveAsset(asset, fromBoxPubKey);
   }
 
+  /**
+   * After buyer accepts the validation of a asset, he should call this method to tell system that
+   * his paid money is safe to seller
+   *
+   * @param mktId
+   */
   async deal(mktId: string) {
     return this.marketHelper.deal(mktId);
   }

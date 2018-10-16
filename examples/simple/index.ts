@@ -63,7 +63,7 @@ import { Seller, SellerOpts, Buyer, BuyerOpts } from "../../src";
 
       // ===================================
       // buyer get the asset and decrypt it
-      const buyerReceived = await buyer.receiveAsset(assetId, paidInfo.sellerBoxAddress, true);
+      const buyerReceived = await buyer.receiveAsset(assetId, paidInfo.sellerBoxAddress);
       console.log("--------");
       console.log("buyerReceived: ");
       console.log(buyerReceived);

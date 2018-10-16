@@ -10,6 +10,9 @@ const driver = require("bigchaindb-driver");
 
 export const dbDriver = driver;
 
+/**
+ * Helper to perform transaction in chain database
+ */
 export class TransactionHelper {
   apiPath = "";
   conn: any;
@@ -111,29 +114,33 @@ export class TransactionHelper {
     return { asset, metadata };
   }
 
-  async receiveAsset(assetId: string, fromBoxPubKey: string, isEncrypted = false) {
+  async receiveAsset(assetId: string, fromBoxPubKey?: string) {
     const { asset, metadata } = await this.getAsset(assetId);
 
-    const encAsset = asset.data.encrypted;
-    if (typeof encAsset !== "string") throw new Error("deformed encrypted asset");
+    if (fromBoxPubKey) {
+      const encAsset = asset.data.encrypted;
+      if (typeof encAsset !== "string") throw new Error("deformed encrypted asset");
 
-    if (!metadata) throw new Error("missing metadata");
+      if (!metadata) throw new Error("missing metadata");
 
-    let enc = metadata._enc_;
-    let nonce = metadata._nonce_;
-    if (!enc || !nonce) throw new Error("deformed pwd");
+      let enc = metadata._enc_;
+      let nonce = metadata._nonce_;
+      if (!enc || !nonce) throw new Error("deformed pwd");
 
-    enc = new Uint8Array(base58.decode(enc));
-    nonce = new Uint8Array(base58.decode(nonce));
-    const key = nacl.box.open(
-      enc,
-      nonce,
-      new Key(fromBoxPubKey).bytes,
-      this.keyPair.privateKey.bytes,
-    );
-    if (key === null) throw new Error("illegal pwd");
+      enc = new Uint8Array(base58.decode(enc));
+      nonce = new Uint8Array(base58.decode(nonce));
+      const key = nacl.box.open(
+        enc,
+        nonce,
+        new Key(fromBoxPubKey).bytes,
+        this.keyPair.privateKey.bytes,
+      );
+      if (key === null) throw new Error("illegal pwd");
 
-    return CryptoHelper.decrypt(encAsset, new TextDecoder("utf8").decode(key));
+      return CryptoHelper.decrypt(encAsset, new TextDecoder("utf8").decode(key));
+    }
+
+    return asset.data;
   }
 
   // async sell(asset: string, price: number): Promise<string> {}

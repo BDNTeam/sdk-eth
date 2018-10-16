@@ -8,6 +8,9 @@ import { Web3Helper } from "./web3";
 
 const log = debug("CDB-SDK:market");
 
+/**
+ * Helper to do marking
+ */
 export class MarketHelper {
   bdn: Contract;
   market: Contract;

@@ -26,10 +26,20 @@ const getInstalledWeb3 = async () => {
 export class MetaMaskNotInstalledErr extends Error {}
 
 export interface InitWeb3Params {
+  /**
+   * use MetaMask or not, default is false
+   */
   metaMask?: boolean;
+
+  /**
+   * address of an ethereum node
+   */
   node?: string;
 }
 
+/**
+ * Helper of web3
+ */
 export class Web3Helper {
   web3: Web3;
 
