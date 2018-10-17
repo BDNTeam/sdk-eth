@@ -20,7 +20,7 @@ Once the asset in ethereum is paid, you should to tell the buyer what is the pas
 You cannot send the plain password over network so you'll try to use the `boxPublicKey` of buyer to encrypt the
 password and send the encrypted stuff to buyer.
 
-Buyer will decrypt your `boxPublicKey` encrypted password by using his own `privateKey`.
+Buyer will decrypt the encrypted password which is encrypted with his `boxPublicKey` by using his own `privateKey`.
 
 ## asset id and mkt id
 
