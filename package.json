@@ -71,6 +71,7 @@
     ]
   },
   "dependencies": {
+    "abi-decoder": "^1.2.0",
     "axios": "^0.18.0",
     "bigchaindb-driver": "^4.1.0",
     "browser-or-node": "^1.1.0",
