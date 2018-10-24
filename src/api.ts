@@ -3,6 +3,9 @@ import axios from "axios";
 
 const abiCache: { [k: string]: any } = {};
 
+/**
+ * Call some server api
+ */
 export class Api {
   static async buildUrl(path: string) {
     const srvAddr = cfg.base.sdkServer;
@@ -23,6 +26,12 @@ export class Api {
     throw new Error("response error: " + data.msg);
   }
 
+  /**
+   * Some configuration items would be changed in the future
+   * hard code them into SDK causes SDK user to upgrade SDK
+   * if they are changed so these configuration item are stored
+   * at server, using server api to retrieve them
+   */
   static async getMarketAddr() {
     const u = await this.buildUrl("/contract/getMarketAddr");
     const resp = await axios.get(u);
