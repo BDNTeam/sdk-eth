@@ -69,3 +69,7 @@ bool deal(string bill);
 ```
 
 来结束交易，此时交易金额进行将会转移给 Alice，在此之前，交易金额将会被固定在合约中。
+
+## 合约实现
+
+具体的合约实现可以参考 [sdk-eth-connector](https://github.com/BDNTeam/sdk-eth-connector)
